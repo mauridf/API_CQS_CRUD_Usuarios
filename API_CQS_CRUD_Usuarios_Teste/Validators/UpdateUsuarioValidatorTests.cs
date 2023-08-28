@@ -34,8 +34,8 @@ namespace API_CQS_CRUD_Usuarios_Teste.Validators
 
         [Theory]
         [InlineData(null, "'IdUsuario' must not be empty.")]
-        [InlineData("0", "'IdUsuario' must be greater than '0'.")]
-        public void IdIsNull(Guid id, string message)
+        [InlineData(0, "'IdUsuario' must be greater than '0'.")]
+        public void IdIsNull(int id, string message)
         {
             // Arrange
             var dto = new Usuario
@@ -62,7 +62,7 @@ namespace API_CQS_CRUD_Usuarios_Teste.Validators
             // Arrange
             var dto = new Usuario
             {
-                IdUsuario = Guid.Parse("424aed9d-afdb-49e7-8102-2466e695661c"),
+                IdUsuario = 1,
                 Nome = null,
                 Senha = "Teste123",
                 DataNascimento = Convert.ToDateTime("14/03/1988"),
@@ -85,7 +85,7 @@ namespace API_CQS_CRUD_Usuarios_Teste.Validators
             // Arrange
             var dto = new Usuario
             {
-                IdUsuario = Guid.Parse("424aed9d-afdb-49e7-8102-2466e695661c"),
+                IdUsuario = 1,
                 Nome = "Fulano",
                 Senha = null,
                 DataNascimento = Convert.ToDateTime("14/03/1988"),

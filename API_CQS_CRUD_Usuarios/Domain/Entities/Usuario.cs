@@ -5,7 +5,7 @@ namespace API_CQS_CRUD_Usuarios.Domain.Entities
 {
     public class Usuario
     {
-        public Guid IdUsuario { get; set; }
+        public int IdUsuario { get; set; }
         public string Nome { get; set; }
         public string Senha { get; set; }
         public DateTime DataNascimento { get; set; }
@@ -16,9 +16,9 @@ namespace API_CQS_CRUD_Usuarios.Domain.Entities
         {
         }
 
-        public Usuario(string nome, DateTime nascimento, string senha)
+        public Usuario(int id, string nome, DateTime nascimento, string senha)
         {
-            IdUsuario = Guid.NewGuid();
+            IdUsuario = id;
             Nome = nome;
             Senha = senha;
             DataNascimento = nascimento;
@@ -27,6 +27,6 @@ namespace API_CQS_CRUD_Usuarios.Domain.Entities
         }
 
         public static Usuario Create(CreateUsuarioCommand command)
-            => new Usuario(command.Nome, command.DataNascimento, command.Senha);
+            => new Usuario(command.IdUsuario, command.Nome, command.DataNascimento, command.Senha);
     }
 }

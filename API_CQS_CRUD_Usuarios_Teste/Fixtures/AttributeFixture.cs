@@ -7,7 +7,7 @@ namespace API_CQS_CRUD_Usuarios_Teste.Fixtures
     public class AttributeFixture<T> where T : ControllerBase
     {
         private readonly Type _type;
-        private MethodInfo? _method;
+        private MethodInfo _method;
 
         public AttributeFixture()
         {

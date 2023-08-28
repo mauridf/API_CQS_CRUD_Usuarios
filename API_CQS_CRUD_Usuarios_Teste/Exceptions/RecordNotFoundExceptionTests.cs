@@ -18,4 +18,5 @@ namespace API_CQS_CRUD_Usuarios_Teste.Exceptions
             // Assert
             exception.Message.Should().Be($"Entity '{entity}' does not matter with the '{key}' key.");
         }
+    }
 }
